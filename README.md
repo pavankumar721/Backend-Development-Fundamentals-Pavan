@@ -1,11 +1,11 @@
 # Backend Development Fundamentals - Lab Coursework
 
-**Student Name:** Pavan Kumar  
+**Student Name:** Pavan Kumar Reddy Kuncha  
 **Registration Number:** 252U1R1187  
 **Section:** CSE-D   
 **Year & Term:** Year II · Term II    
 **Institution:** Aurora Higher Education and Research Academy  
-**Faculty:** Siva Teja  
+**Faculty:** Sai Siva Teja  
 **GitHub Repository:** [https://github.com/pavankumar721/Backend-Development-Fundamentals-Pavan](https://github.com/pavankumar721/Backend-Development-Fundamentals-Pavan)
 
 ---
