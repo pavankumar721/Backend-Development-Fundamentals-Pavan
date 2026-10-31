@@ -10,18 +10,34 @@
 
 ---
 
-## 🌐 Live Deployed Links
+## 🌐 Live Deployed & Cloud Deployment Links
 
 - **Active Live URL:** [https://1bc0ac43f17b33.lhr.life](https://1bc0ac43f17b33.lhr.life)
-- **Live Endpoint - Root (`/`):** [https://1bc0ac43f17b33.lhr.life/](https://1bc0ac43f17b33.lhr.life/)
-- **Live Endpoint - About (`/about`):** [https://1bc0ac43f17b33.lhr.life/about](https://1bc0ac43f17b33.lhr.life/about)
-- **Live Endpoint - Time (`/time`):** [https://1bc0ac43f17b33.lhr.life/time](https://1bc0ac43f17b33.lhr.life/time)
-- **Live Endpoint - 404 Error Handler (`/unknown`):** [https://1bc0ac43f17b33.lhr.life/unknown](https://1bc0ac43f17b33.lhr.life/unknown)
+- **Live Endpoint - Root (`GET /`):** [https://1bc0ac43f17b33.lhr.life/](https://1bc0ac43f17b33.lhr.life/)
+- **Live Endpoint - About (`GET /about`):** [https://1bc0ac43f17b33.lhr.life/about](https://1bc0ac43f17b33.lhr.life/about)
+- **Live Endpoint - Time (`GET /time`):** [https://1bc0ac43f17b33.lhr.life/time](https://1bc0ac43f17b33.lhr.life/time)
+- **Live Endpoint - 404 Route (`GET /unknown`):** [https://1bc0ac43f17b33.lhr.life/unknown](https://1bc0ac43f17b33.lhr.life/unknown)
 
-### Cloud Backup Deployments
-- **Production URL (Render):** [https://backend-development-fundamentals-pavan.onrender.com](https://backend-development-fundamentals-pavan.onrender.com)
+### Cloud Production Blueprints (Vercel & Render)
+- **1-Click Deploy to Vercel:**  
+  [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/pavankumar721/Backend-Development-Fundamentals-Pavan)
 - **1-Click Deploy to Render:**  
   [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/pavankumar721/Backend-Development-Fundamentals-Pavan)
+- **Production URL (Render):** [https://backend-development-fundamentals-pavan.onrender.com](https://backend-development-fundamentals-pavan.onrender.com)
+
+---
+
+## 📁 Repository Quick Links
+
+| File / Folder | Direct GitHub Link |
+| :--- | :--- |
+| **Express Server (`server.js`)** | [lab-01/server.js](https://github.com/pavankumar721/Backend-Development-Fundamentals-Pavan/blob/main/lab-01/server.js) |
+| **Plain HTTP Server (`http-server.js`)** | [lab-01/http-server.js](https://github.com/pavankumar721/Backend-Development-Fundamentals-Pavan/blob/main/lab-01/http-server.js) |
+| **Package Manifest (`package.json`)** | [lab-01/package.json](https://github.com/pavankumar721/Backend-Development-Fundamentals-Pavan/blob/main/lab-01/package.json) |
+| **Vercel Config (`vercel.json`)** | [vercel.json](https://github.com/pavankumar721/Backend-Development-Fundamentals-Pavan/blob/main/vercel.json) |
+| **Vercel Entrypoint (`api/index.js`)** | [api/index.js](https://github.com/pavankumar721/Backend-Development-Fundamentals-Pavan/blob/main/api/index.js) |
+| **Render Blueprint (`render.yaml`)** | [render.yaml](https://github.com/pavankumar721/Backend-Development-Fundamentals-Pavan/blob/main/render.yaml) |
+| **Screenshots Folder** | [lab-01/screenshots/](https://github.com/pavankumar721/Backend-Development-Fundamentals-Pavan/tree/main/lab-01/screenshots) |
 
 ---
 
@@ -193,31 +209,36 @@ module.exports = app;
 ## Screenshots of Working Output
 
 ### 1. Root Route (`GET /`)
-Returns `200 OK` with welcome text.
+Returns `200 OK` with welcome text.  
+👉 [Direct Image Link](https://github.com/pavankumar721/Backend-Development-Fundamentals-Pavan/blob/main/lab-01/screenshots/01-home-route.png)  
 ![Welcome Route Output](screenshots/01-home-route.png)
 
 ---
 
 ### 2. About Route (`GET /about`)
-Returns `200 OK` with student details in JSON format.
+Returns `200 OK` with student details in JSON format.  
+👉 [Direct Image Link](https://github.com/pavankumar721/Backend-Development-Fundamentals-Pavan/blob/main/lab-01/screenshots/02-about-route.png)  
 ![About Route Output](screenshots/02-about-route.png)
 
 ---
 
 ### 3. Time Route (`GET /time`)
-Returns `200 OK` with dynamic current date and time.
+Returns `200 OK` with dynamic current date and time.  
+👉 [Direct Image Link](https://github.com/pavankumar721/Backend-Development-Fundamentals-Pavan/blob/main/lab-01/screenshots/03-time-route.png)  
 ![Time Route Output](screenshots/03-time-route.png)
 
 ---
 
 ### 4. 404 Route (`GET /unknown-path`)
-Returns `404 Not Found` with structured error message.
+Returns `404 Not Found` with structured error message.  
+👉 [Direct Image Link](https://github.com/pavankumar721/Backend-Development-Fundamentals-Pavan/blob/main/lab-01/screenshots/04-not-found-route.png)  
 ![404 Error Route Output](screenshots/04-not-found-route.png)
 
 ---
 
 ### 5. Plain HTTP Server (`http.createServer`)
-Returns `200 OK` with plain text `"Hello"`.
+Returns `200 OK` with plain text `"Hello"`.  
+👉 [Direct Image Link](https://github.com/pavankumar721/Backend-Development-Fundamentals-Pavan/blob/main/lab-01/screenshots/05-plain-http-server.png)  
 ![Plain HTTP Server Output](screenshots/05-plain-http-server.png)
 
 ---
@@ -258,3 +279,6 @@ Every route was tested and logged:
 3. **Preventing `node_modules` Leaks in Git**:
    - *Problem:* Unintentionally committing thousands of dependency files bloats repository size.
    - *Solution:* Configured a root-level `.gitignore` file specifying `node_modules/` before staging and committing files.
+4. **Vercel Serverless Function Compatibility**:
+   - *Problem:* Monorepo subfolder structure caused Vercel to miss root `package.json` and fail module resolution.
+   - *Solution:* Added root `package.json`, configured `api/index.js` as the serverless handler, and set up modern URL rewrites in `vercel.json`.
