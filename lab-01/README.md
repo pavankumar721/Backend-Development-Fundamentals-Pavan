@@ -10,16 +10,18 @@
 
 ---
 
-## Live Deployment Links
+## 🌐 Live Deployed Links
 
-- **Public Production URL (Render):** [https://backend-development-fundamentals-pavan.onrender.com](https://backend-development-fundamentals-pavan.onrender.com)
+- **Active Live URL:** [https://1bc0ac43f17b33.lhr.life](https://1bc0ac43f17b33.lhr.life)
+- **Live Endpoint - Root (`/`):** [https://1bc0ac43f17b33.lhr.life/](https://1bc0ac43f17b33.lhr.life/)
+- **Live Endpoint - About (`/about`):** [https://1bc0ac43f17b33.lhr.life/about](https://1bc0ac43f17b33.lhr.life/about)
+- **Live Endpoint - Time (`/time`):** [https://1bc0ac43f17b33.lhr.life/time](https://1bc0ac43f17b33.lhr.life/time)
+- **Live Endpoint - 404 Error Handler (`/unknown`):** [https://1bc0ac43f17b33.lhr.life/unknown](https://1bc0ac43f17b33.lhr.life/unknown)
+
+### Cloud Backup Deployments
+- **Production URL (Render):** [https://backend-development-fundamentals-pavan.onrender.com](https://backend-development-fundamentals-pavan.onrender.com)
 - **1-Click Deploy to Render:**  
   [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/pavankumar721/Backend-Development-Fundamentals-Pavan)
-- **1-Click Deploy to Vercel:**  
-  [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/pavankumar721/Backend-Development-Fundamentals-Pavan)
-
-> **Deployment Details:**  
-> The repository includes complete infrastructure blueprints (`render.yaml` and `vercel.json`) and handles dynamic port binding (`process.env.PORT || 3000`). Clicking either button above instantly deploys the live server to the cloud. All endpoints have also been thoroughly tested with complete browser verification screenshots provided below.
 
 ---
 
