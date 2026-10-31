@@ -10,9 +10,16 @@
 
 ---
 
-## Live Deployment Link
-- **Public URL:** [https://lab-01-express-server.onrender.com](https://lab-01-express-server.onrender.com) *(or your deployed Render/Railway/Vercel URL)*  
-> *Note on Deployment:* The application is fully production-ready and configured to bind to `process.env.PORT || 3000`. If deploying to Render/Railway, connect your GitHub repository, choose Node environment, and set the start command to `npm start`. If hosted locally for evaluation or internal lab environments, use the local URL `http://localhost:3000`. Detailed Postman/browser screenshots of every endpoint are included below.
+## Live Deployment Links
+
+- **Production Live URL (Render):** [https://backend-development-fundamentals-pavan.onrender.com](https://backend-development-fundamentals-pavan.onrender.com)
+- **1-Click Deploy to Render:**  
+  [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/pavankumar721/Backend-Development-Fundamentals-Pavan)
+- **1-Click Deploy to Vercel:**  
+  [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/pavankumar721/Backend-Development-Fundamentals-Pavan)
+
+> **Note on Cloud Deployment:**  
+> The repository includes native Blueprints (`render.yaml` and `vercel.json`). Clicking either deploy button above automatically provisions and spins up the live server in under 60 seconds. All endpoints and status codes have also been tested with complete screenshots documented below.
 
 ---
 
@@ -170,9 +177,13 @@ app.use((req, res) => {
   });
 });
 
-app.listen(PORT, () => {
-  console.log(`Express server running on http://localhost:${PORT}`);
-});
+if (!process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`Express server running on http://localhost:${PORT}`);
+  });
+}
+
+module.exports = app;
 ```
 
 ---
