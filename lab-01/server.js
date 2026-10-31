@@ -19,12 +19,13 @@ app.get('/', (req, res) => {
 // Route 2: GET /about (JSON with name and section)
 app.get('/about', (req, res) => {
   res.status(200).json({
-    name: 'Pavan Reddy',
+    name: 'Pavan Kumar',
     registrationNumber: '23BD1A0501',
     section: 'CSE-A',
     department: 'Computer Science and Engineering',
     course: 'Backend Development Fundamentals',
-    faculty: 'Joel Prashanth D'
+    faculty: 'Joel Prashanth D',
+    repository: 'https://github.com/pavankumar721/Backend-Development-Fundamentals-Pavan'
   });
 });
 

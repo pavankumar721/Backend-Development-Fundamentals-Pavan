@@ -1,11 +1,12 @@
 # Lab 1: Node.js and Express server
 
-**Student Name:** Pavan Reddy  
+**Student Name:** Pavan Kumar  
 **Registration Number:** 23BD1A0501  
 **Section:** CSE-A  
 **Course:** Backend Development Fundamentals (Year II · Term II)  
 **Institution:** Aurora Higher Education and Research Academy  
 **Faculty:** Joel Prashanth D  
+**GitHub Repository:** [https://github.com/pavankumar721/Backend-Development-Fundamentals-Pavan](https://github.com/pavankumar721/Backend-Development-Fundamentals-Pavan)
 
 ---
 
@@ -31,7 +32,7 @@ When initializing a Node.js project using `npm init -y`, a `package.json` manife
 | `main` | The primary entry point script executed when running the package. | Points to `"server.js"`. |
 | `scripts` | A dictionary of terminal shortcut commands executed via `npm run <script>`. | Contains `"start"`, `"start:http"`, and `"dev"`. |
 | `keywords` | An array of string tags used for searching and categorization. | Tagged with `nodejs`, `express`, `backend`. |
-| `author` | The name or contact info of the package creator. | Set to student name (`"Pavan Reddy"`). |
+| `author` | The name or contact info of the package creator. | Set to student name (`"Pavan Kumar"`). |
 | `license` | The legal open-source or proprietary licensing agreement. | Set to `"ISC"`. |
 | `dependencies` | Key-value map of third-party npm packages required at runtime. | Specifies `"express": "^5.3.0"`. |
 
@@ -140,12 +141,13 @@ app.get('/', (req, res) => {
 // Route 2: About info
 app.get('/about', (req, res) => {
   res.status(200).json({
-    name: 'Pavan Reddy',
+    name: 'Pavan Kumar',
     registrationNumber: '23BD1A0501',
     section: 'CSE-A',
     department: 'Computer Science and Engineering',
     course: 'Backend Development Fundamentals',
-    faculty: 'Joel Prashanth D'
+    faculty: 'Joel Prashanth D',
+    repository: 'https://github.com/pavankumar721/Backend-Development-Fundamentals-Pavan'
   });
 });
 
