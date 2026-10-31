@@ -1,25 +1,25 @@
 # Lab 1: Node.js and Express server
 
-**Student Name:** Pavan Kumar  
-**Registration Number:** 23BD1A0501  
-**Section:** CSE-A  
+**Student Name:** Pavan Kumar Reddy Kuncha  
+**Registration Number:** 252U1R1187  
+**Section:** CSE-D  
 **Course:** Backend Development Fundamentals (Year II · Term II)  
 **Institution:** Aurora Higher Education and Research Academy  
-**Faculty:** Joel Prashanth D  
+**Faculty:** Sai Siva Teja  
 **GitHub Repository:** [https://github.com/pavankumar721/Backend-Development-Fundamentals-Pavan](https://github.com/pavankumar721/Backend-Development-Fundamentals-Pavan)
 
 ---
 
 ## Live Deployment Links
 
-- **Production Live URL (Render):** [https://backend-development-fundamentals-pavan.onrender.com](https://backend-development-fundamentals-pavan.onrender.com)
+- **Public Production URL (Render):** [https://backend-development-fundamentals-pavan.onrender.com](https://backend-development-fundamentals-pavan.onrender.com)
 - **1-Click Deploy to Render:**  
   [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/pavankumar721/Backend-Development-Fundamentals-Pavan)
 - **1-Click Deploy to Vercel:**  
   [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/pavankumar721/Backend-Development-Fundamentals-Pavan)
 
-> **Note on Cloud Deployment:**  
-> The repository includes native Blueprints (`render.yaml` and `vercel.json`). Clicking either deploy button above automatically provisions and spins up the live server in under 60 seconds. All endpoints and status codes have also been tested with complete screenshots documented below.
+> **Deployment Details:**  
+> The repository includes complete infrastructure blueprints (`render.yaml` and `vercel.json`) and handles dynamic port binding (`process.env.PORT || 3000`). Clicking either button above instantly deploys the live server to the cloud. All endpoints have also been thoroughly tested with complete browser verification screenshots provided below.
 
 ---
 
@@ -39,7 +39,7 @@ When initializing a Node.js project using `npm init -y`, a `package.json` manife
 | `main` | The primary entry point script executed when running the package. | Points to `"server.js"`. |
 | `scripts` | A dictionary of terminal shortcut commands executed via `npm run <script>`. | Contains `"start"`, `"start:http"`, and `"dev"`. |
 | `keywords` | An array of string tags used for searching and categorization. | Tagged with `nodejs`, `express`, `backend`. |
-| `author` | The name or contact info of the package creator. | Set to student name (`"Pavan Kumar"`). |
+| `author` | The name or contact info of the package creator. | Set to student name (`"Pavan Kumar Reddy Kuncha"`). |
 | `license` | The legal open-source or proprietary licensing agreement. | Set to `"ISC"`. |
 | `dependencies` | Key-value map of third-party npm packages required at runtime. | Specifies `"express": "^5.3.0"`. |
 
@@ -148,12 +148,12 @@ app.get('/', (req, res) => {
 // Route 2: About info
 app.get('/about', (req, res) => {
   res.status(200).json({
-    name: 'Pavan Kumar',
-    registrationNumber: '23BD1A0501',
-    section: 'CSE-A',
+    name: 'Pavan Kumar Reddy Kuncha',
+    registrationNumber: '252U1R1187',
+    section: 'CSE-D',
     department: 'Computer Science and Engineering',
     course: 'Backend Development Fundamentals',
-    faculty: 'Joel Prashanth D',
+    faculty: 'Sai Siva Teja',
     repository: 'https://github.com/pavankumar721/Backend-Development-Fundamentals-Pavan'
   });
 });

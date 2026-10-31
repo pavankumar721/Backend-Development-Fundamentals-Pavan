@@ -18,7 +18,7 @@
     "backend",
     "lab-01"
   ],
-  "author": "Pavan Kumar",
+  "author": "Pavan Kumar Reddy Kuncha",
   "license": "ISC",
   "dependencies": {
     "express": "^5.3.0"
