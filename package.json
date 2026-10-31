@@ -1,0 +1,19 @@
+{
+  "name": "backend-development-fundamentals-pavan",
+  "version": "1.0.0",
+  "description": "Backend Development Fundamentals - Coursework and Lab Assignments",
+  "main": "api/index.js",
+  "scripts": {
+    "start": "node lab-01/server.js",
+    "dev": "node --watch lab-01/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pavankumar721/Backend-Development-Fundamentals-Pavan.git"
+  },
+  "author": "Pavan Kumar Reddy Kuncha",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.3.0"
+  }
+}
