@@ -10,22 +10,10 @@
 
 ---
 
-## 🌐 Live Deployed & Cloud Deployment Links
+## 🌐 Live Deployed Link
 
 - **Active Live URL:** [https://1bc0ac43f17b33.lhr.life](https://1bc0ac43f17b33.lhr.life)
-- **Live Endpoint - Root (`GET /`):** [https://1bc0ac43f17b33.lhr.life/](https://1bc0ac43f17b33.lhr.life/)
-- **Live Endpoint - About (`GET /about`):** [https://1bc0ac43f17b33.lhr.life/about](https://1bc0ac43f17b33.lhr.life/about)
-- **Live Endpoint - Time (`GET /time`):** [https://1bc0ac43f17b33.lhr.life/time](https://1bc0ac43f17b33.lhr.life/time)
-- **Live Endpoint - 404 Route (`GET /unknown`):** [https://1bc0ac43f17b33.lhr.life/unknown](https://1bc0ac43f17b33.lhr.life/unknown)
 
-### Cloud Production Blueprints (Vercel & Render)
-- **1-Click Deploy to Vercel:**  
-  [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/pavankumar721/Backend-Development-Fundamentals-Pavan)
-- **1-Click Deploy to Render:**  
-  [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/pavankumar721/Backend-Development-Fundamentals-Pavan)
-- **Production URL (Render):** [https://backend-development-fundamentals-pavan.onrender.com](https://backend-development-fundamentals-pavan.onrender.com)
-
----
 
 ## 📁 Repository Quick Links
 
