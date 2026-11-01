@@ -12,7 +12,7 @@
 
 ## 🌐 Live Deployed Link
 
-- **Active Live URL:** (https://backend-development-fundamentals-pavan-6r6t-os7zcvs23.vercel.app/)
+- **Active Live URL:** ([https://backend-development-fundamentals-pavan-6r6t-os7zcvs23.vercel.app](https://backend-development-fundamentals-pa-ochre.vercel.app/?_vercel_share=PWfqJH0QfuEs3XpU4t1QqfvYlL1KI1My)/)
 
 
 ## Objective
