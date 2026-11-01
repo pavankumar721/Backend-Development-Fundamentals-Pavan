@@ -9,18 +9,10 @@
 **GitHub Repository:** [https://github.com/pavankumar721/Backend-Development-Fundamentals-Pavan](https://github.com/pavankumar721/Backend-Development-Fundamentals-Pavan)
 
 ---
-**Deployment Link:** backend-development-fundamentals-pavan-6r6t-os7zcvs23.vercel.app
+**Deployment Live Link:**  [backend-development-fundamentals-pavan-6r6t-os7zcvs23.vercel.app 
+](https://backend-development-fundamentals-pavan-6r6t-os7zcvs23.vercel.app/)
 
 
-
-## 🌐 Live Cloud Deployment & Direct Deploy Links
-
-| Platform | Deployment URL | 1-Click Deploy Link |
-| :--- | :--- | :--- |
-| **Vercel** | [Deploy on Vercel](https://vercel.com/new/clone?repository-url=https://github.com/pavankumar721/Backend-Development-Fundamentals-Pavan) | [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/pavankumar721/Backend-Development-Fundamentals-Pavan) |
-| **Render** | [backend-development-fundamentals-pavan.onrender.com](https://backend-development-fundamentals-pavan.onrender.com) | [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/pavankumar721/Backend-Development-Fundamentals-Pavan) |
-
----
 
 ## Course Overview
 This repository contains all laboratory assignments and coursework for the **Backend Development Fundamentals** course. Each laboratory task is organized in its own designated directory (`lab-01` to `lab-10`) containing complete source code, installation steps, endpoint documentation, and verification screenshots.
