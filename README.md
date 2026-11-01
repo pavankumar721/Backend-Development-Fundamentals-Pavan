@@ -9,19 +9,9 @@
 **GitHub Repository:** [https://github.com/pavankumar721/Backend-Development-Fundamentals-Pavan](https://github.com/pavankumar721/Backend-Development-Fundamentals-Pavan)
 
 ---
+**Deployment Link:** backend-development-fundamentals-pavan-6r6t-os7zcvs23.vercel.app
 
-## 🚀 Quick Access Links
 
-| Resource | Link |
-| :--- | :--- |
-| **Lab 01 Directory** | [📂 Browse lab-01 folder](https://github.com/pavankumar721/Backend-Development-Fundamentals-Pavan/tree/main/lab-01) |
-| **Lab 01 Full Documentation** | [📄 View lab-01 README.md](https://github.com/pavankumar721/Backend-Development-Fundamentals-Pavan/blob/main/lab-01/README.md) |
-| **Express Server Source** | [💻 server.js](https://github.com/pavankumar721/Backend-Development-Fundamentals-Pavan/blob/main/lab-01/server.js) |
-| **Plain HTTP Server Source** | [💻 http-server.js](https://github.com/pavankumar721/Backend-Development-Fundamentals-Pavan/blob/main/lab-01/http-server.js) |
-| **Vercel Serverless Entrypoint** | [⚡ api/index.js](https://github.com/pavankumar721/Backend-Development-Fundamentals-Pavan/blob/main/api/index.js) |
-| **Output Screenshots Directory** | [🖼️ screenshots/](https://github.com/pavankumar721/Backend-Development-Fundamentals-Pavan/tree/main/lab-01/screenshots) |
-
----
 
 ## 🌐 Live Cloud Deployment & Direct Deploy Links
 
