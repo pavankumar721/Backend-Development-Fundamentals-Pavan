@@ -9,9 +9,8 @@
 **GitHub Repository:** [https://github.com/pavankumar721/Backend-Development-Fundamentals-Pavan](https://github.com/pavankumar721/Backend-Development-Fundamentals-Pavan)
 
 ---
-**Deployment Live Link:**  [backend-development-fundamentals-pavan-6r6t-os7zcvs23.vercel.app 
-](https://backend-development-fundamentals-pavan-6r6t-os7zcvs23.vercel.app/)
-
+**Deployment Live Link:** [https://backend-development-fundamentals-pa-ochre.vercel.app?_vercel_share=PWfqJH0QfuEs3XpU4t1QqfvYlL1KI1My  
+](https://backend-development-fundamentals-pa-ochre.vercel.app/?_vercel_share=PWfqJH0QfuEs3XpU4t1QqfvYlL1KI1My)
 
 
 ## Course Overview
