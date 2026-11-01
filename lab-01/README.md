@@ -12,7 +12,7 @@
 
 ## 🌐 Live Deployed Link
 
-- **Active Live URL:** [https://1bc0ac43f17b33.lhr.life](https://1bc0ac43f17b33.lhr.life)
+- **Active Live URL:** [[https://1bc0ac43f17b33.lhr.life](https://1bc0ac43f17b33.lhr.life)](https://backend-development-fundamentals-pavan-6r6t-os7zcvs23.vercel.app/)
 
 
 ## 📁 Repository Quick Links
