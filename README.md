@@ -1,61 +1,79 @@
-# Backend Development Fundamentals - Lab Coursework
+# BDF Lab 03 REST API Query Parameters Validation Debugging
 
-**Student Name:** Pavan Kumar Reddy Kuncha  
-**Registration Number:** 252U1R1187  
-**Section:** CSE-D   
-**Year & Term:** Year II · Term II    
-**Institution:** Aurora Higher Education and Research Academy  
-**Faculty:** Sai Siva Teja  
-**GitHub Repository:** [https://github.com/pavankumar721/Backend-Development-Fundamentals-Pavan](https://github.com/pavankumar721/Backend-Development-Fundamentals-Pavan)
+**Deployment URL:** https://<your-deployment-url>.vercel.app  
+*(Replace the above placeholder with the actual public URL after deployment.)*
 
 ---
 
-## 🚀 Quick Access Links
-
-| Resource | Link |
-| :--- | :--- |
-| **Lab 01 Directory** | [📂 Browse lab-01 folder](https://github.com/pavankumar721/Backend-Development-Fundamentals-Pavan/tree/main/lab-01) |
-| **Lab 01 Full Documentation** | [📄 View lab-01 README.md](https://github.com/pavankumar721/Backend-Development-Fundamentals-Pavan/blob/main/lab-01/README.md) |
-| **Express Server Source** | [💻 server.js](https://github.com/pavankumar721/Backend-Development-Fundamentals-Pavan/blob/main/lab-01/server.js) |
-| **Plain HTTP Server Source** | [💻 http-server.js](https://github.com/pavankumar721/Backend-Development-Fundamentals-Pavan/blob/main/lab-01/http-server.js) |
-| **Vercel Serverless Entrypoint** | [⚡ api/index.js](https://github.com/pavankumar721/Backend-Development-Fundamentals-Pavan/blob/main/api/index.js) |
-| **Output Screenshots Directory** | [🖼️ screenshots/](https://github.com/pavankumar721/Backend-Development-Fundamentals-Pavan/tree/main/lab-01/screenshots) |
+## 📋 Student Details
+- **Name:** <Your Name>
+- **Registration Number:** <Your Registration Number>
+- **Section:** <Your Section>
 
 ---
 
-## 🌐 Live Cloud Deployment & Direct Deploy Links
+## 🚀 Installation
+```bash
+# Clone the repository
+git clone https://github.com/<your-github-username>/<repo-name>.git
+cd <repo-name>
 
-| Platform | Deployment URL | 1-Click Deploy Link |
-| :--- | :--- | :--- |
-| **Vercel** | [Deploy on Vercel](https://vercel.com/new/clone?repository-url=https://github.com/pavankumar721/Backend-Development-Fundamentals-Pavan) | [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/pavankumar721/Backend-Development-Fundamentals-Pavan) |
-| **Render** | [backend-development-fundamentals-pavan.onrender.com](https://backend-development-fundamentals-pavan.onrender.com) | [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/pavankumar721/Backend-Development-Fundamentals-Pavan) |
+# Install dependencies
+npm install
+```
 
----
+## ▶️ Execution
+```bash
+# Run the application locally
+npm start
+```
 
-## Course Overview
-This repository contains all laboratory assignments and coursework for the **Backend Development Fundamentals** course. Each laboratory task is organized in its own designated directory (`lab-01` to `lab-10`) containing complete source code, installation steps, endpoint documentation, and verification screenshots.
-
----
-
-## Labs Directory Structure
-
-| Lab Directory | Topic / Title | Status | Link |
-| :--- | :--- | :--- | :--- |
-| **`lab-01/`** | **Node.js and Express Server** | **Completed** | [Lab 01 Documentation & Code](https://github.com/pavankumar721/Backend-Development-Fundamentals-Pavan/blob/main/lab-01/README.md) |
-| `lab-02/` | SQLite and Relational Database Operations | Upcoming | `lab-02/` |
-| `lab-03/` | RESTful API Development and Validation | Upcoming | `lab-03/` |
-| `lab-04/` | Authentication and User Management | Upcoming | `lab-04/` |
-| `lab-05/` | Middleware, Authorization, and Error Handling | Upcoming | `lab-05/` |
-| `lab-06/` | File Handling and Asynchronous Operations | Upcoming | `lab-06/` |
-| `lab-07/` | Streams and Data Processing | Upcoming | `lab-07/` |
-| `lab-08/` | MongoDB and Node.js Integration | Upcoming | `lab-08/` |
-| `lab-09/` | MongoDB CRUD APIs and Query Operations | Upcoming | `lab-09/` |
-| `lab-10/` | Secure MongoDB APIs and Backend Integration | Upcoming | `lab-10/` |
+The server will start on `http://localhost:3000` (or the port defined in your environment).
 
 ---
 
-## General Rules Followed
-- Clean repository structure adhering to course guidelines.
-- Dependencies (`node_modules/`) and sensitive files (`.env`) are excluded from version control via `.gitignore`.
-- Every HTTP route returns standard semantic status codes.
-- Comprehensive documentation and testing screenshots included in each lab.
+## 📡 API Endpoints
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/users` | Retrieve list of users |
+| GET | `/api/users/:id` | Get a user by ID |
+| POST | `/api/users` | Create a new user |
+| PUT | `/api/users/:id` | Update an existing user |
+| DELETE | `/api/users/:id` | Delete a user |
+
+*Add any additional endpoints required by the lab.*
+
+---
+
+## 📸 Screenshots
+Below are screenshots of the working endpoints. Place the images inside the `screenshots/` directory and they will be displayed here.
+
+![GET /api/users](screenshots/get-users.png)
+![POST /api/users](screenshots/post-users.png)
+
+*Add more screenshots as needed.*
+
+---
+
+## 📝 Notes
+- Ensure that query parameters are validated according to the lab specifications.
+- Use proper error handling for invalid requests.
+- Follow the coding standards provided in the lab document.
+
+---
+
+## 📂 Folder Structure
+```
+.
+├─ api/                # Vercel serverless functions
+│   └─ index.js
+├─ lab-01/            # Main application source
+│   ├─ server.js
+│   └─ ...
+├─ screenshots/       # Screenshots of API responses
+│   ├─ get-users.png
+│   └─ post-users.png
+├─ package.json
+├─ package-lock.json
+└─ README.md
+```
