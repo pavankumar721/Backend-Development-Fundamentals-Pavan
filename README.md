@@ -5,6 +5,10 @@
 
 ---
 
+**Deployment Live Link:** [https://backend-development-fundamentals-pa-ochre.vercel.app?_vercel_share=PWfqJH0QfuEs3XpU4t1QqfvYlL1KI1My](https://backend-development-fundamentals-pa-ochre.vercel.app/?_vercel_share=PWfqJH0QfuEs3XpU4t1QqfvYlL1KI1My)
+
+---
+
 ## 📋 Student Details
 - **Name:** <Your Name>
 - **Registration Number:** <Your Registration Number>
