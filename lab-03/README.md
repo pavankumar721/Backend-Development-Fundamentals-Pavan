@@ -199,27 +199,53 @@ module.exports = app;
 
 ## 📸 Screenshots
 
-Place Postman screenshots inside the `screenshots/` directory.
+Postman test responses and terminal debugging logs covering both success and failure cases:
 
-| Screenshot | Description |
-|------------|-------------|
-| `01-get-all-books.png` | `GET /books` — returns all books |
-| `02-get-books-search.png` | `GET /books?search_q=clean` — filtered results |
-| `03-get-books-sort-price.png` | `GET /books?order_by=price&order=DESC` — sorted |
-| `04-get-books-price-range.png` | `GET /books?min_price=25&max_price=50` — price range |
-| `05-get-books-pagination.png` | `GET /books?limit=2&offset=2` — pagination |
-| `06-get-book-by-id.png` | `GET /books/1` — single book |
-| `07-get-book-404.png` | `GET /books/999` — 404 not found |
-| `08-post-book-201.png` | `POST /books` — 201 created |
-| `09-post-book-400.png` | `POST /books` missing title — 400 bad request |
-| `10-put-book-200.png` | `PUT /books/1` — 200 updated |
-| `11-put-book-404.png` | `PUT /books/999` — 404 not found |
-| `12-delete-book-200.png` | `DELETE /books/1` — 200 deleted |
-| `13-delete-book-404.png` | `DELETE /books/999` — 404 not found |
+### 1. GET /books?search_q=clean (Search Filter)
+Returns partial title matches using query parameters.  
+![GET /books?search_q=clean](screenshots/02-get-books-search.png)
 
-![GET /books](screenshots/01-get-all-books.png)
-![POST /books 201](screenshots/08-post-book-201.png)
-![POST /books 400](screenshots/09-post-book-400.png)
+---
+
+### 2. GET /books?order_by=price&order=DESC (Sorted)
+Sorts books by specified column in descending order.  
+![GET /books?order_by=price&order=DESC](screenshots/03-get-books-sorted.png)
+
+---
+
+### 3. GET /books?min_price=25&max_price=45 (Price Filter)
+Filters books within a numeric price range.  
+![GET /books?min_price=25&max_price=45](screenshots/04-get-books-pricefilter.png)
+
+---
+
+### 4. GET /books?limit=2&offset=2 (Pagination)
+Paginates through books using limit and offset.  
+![GET /books?limit=2&offset=2](screenshots/05-get-books-pagination.png)
+
+---
+
+### 5. POST /books (Success - 201 Created)
+Creates a new book and returns `201 Created` with the new resource payload.  
+![POST /books 201 Created](screenshots/08-post-books-success.png)
+
+---
+
+### 6. POST /books (Validation Failure - 400 Bad Request)
+Rejects invalid input (missing title/author or non-numeric price) with `400 Bad Request` and clear error message.  
+![POST /books 400 Validation Error](screenshots/09-post-books-validation.png)
+
+---
+
+### 7. GET /books/:id (404 Not Found)
+Returns consistent `{ "message": "..." }` and `404 Not Found` when record ID does not exist.  
+![GET /books/:id 404 Not Found](screenshots/07-get-books-404.png)
+
+---
+
+### 8. Debugging Exercise (Terminal Resolution Log)
+Resolution log verifying all 4 common backend errors (port conflict `EADDRINUSE`, wrong import path, table name typo, missing `await`).  
+![Debugging Exercise Resolution](screenshots/14-debugging-exercise.png)
 
 ---
 
