@@ -200,7 +200,7 @@ app.use((req, res) => {
 // ─────────────────────────────────────────────────────────────────────────────
 // Start server
 // ─────────────────────────────────────────────────────────────────────────────
-if (!process.env.VERCEL) {
+if (require.main === module && !process.env.VERCEL) {
   app.listen(PORT, () => {
     console.log(`Lab 03 REST API server running on http://localhost:${PORT}`);
   });

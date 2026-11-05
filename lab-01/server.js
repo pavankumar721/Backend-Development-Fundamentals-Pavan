@@ -49,7 +49,7 @@ app.use((req, res) => {
 });
 
 // Start Express server if run directly (local / Render / Railway)
-if (!process.env.VERCEL) {
+if (require.main === module && !process.env.VERCEL) {
   app.listen(PORT, () => {
     console.log(`Express server running on http://localhost:${PORT}`);
   });
