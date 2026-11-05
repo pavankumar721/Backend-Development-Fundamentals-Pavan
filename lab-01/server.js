@@ -3,11 +3,28 @@ const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+app.use(express.json());
+
 // Request logger middleware to log method, URL, and HTTP status code
 app.use((req, res, next) => {
   res.on('finish', () => {
     console.log(`[${new Date().toISOString()}] ${req.method} ${req.originalUrl} - Status: ${res.statusCode}`);
   });
+  next();
+});
+
+// Middleware to handle Vercel rewrites:
+// If Vercel rewrote the URL to /server.js or /server.js?..., restore original path
+app.use((req, res, next) => {
+  if (req.url.startsWith('/server.js')) {
+    const original = req.headers['x-matched-path'] || req.originalUrl || '/';
+    // If originalUrl was replaced by Vercel with /server.js, check query parameter or strip /server.js
+    if (original.startsWith('/server.js')) {
+      req.url = original.replace('/server.js', '') || '/';
+    } else {
+      req.url = original;
+    }
+  }
   next();
 });
 
@@ -39,7 +56,7 @@ app.get('/time', (req, res) => {
   });
 });
 
-// Forward any /books routes to lab-03 server if hit on this server instance
+// Forward all /books routes to lab-03 server
 try {
   const lab03App = require('../lab-03/server.js');
   app.use('/books', (req, res, next) => {
@@ -48,7 +65,7 @@ try {
   });
   app.use('/lab-03', lab03App);
 } catch (e) {
-  // Ignore if lab-03 is not present
+  console.error('Failed to mount lab-03 routes:', e);
 }
 
 // Route 4: Catch-all 404 handler for any unknown path
