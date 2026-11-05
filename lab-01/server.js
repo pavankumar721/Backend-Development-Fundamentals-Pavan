@@ -13,21 +13,14 @@ app.use((req, res, next) => {
   next();
 });
 
-// Middleware to restore actual requested URL when Vercel rewrites to /server.js
+// Middleware to restore actual requested URL when Vercel rewrites to /api/index.js or /server.js
 app.use((req, res, next) => {
-  const matched = req.headers['x-matched-path'];
-  if (matched && !matched.startsWith('/server.js')) {
-    req.url = matched;
+  // If Vercel rewrote URL, strip the file rewrite prefix
+  if (req.url.startsWith('/api/index.js')) {
+    req.url = req.url.replace('/api/index.js', '') || '/';
   } else if (req.url.startsWith('/server.js')) {
-    const rawQuery = req.url.includes('?') ? req.url.slice(req.url.indexOf('?')) : '';
-    req.url = '/' + rawQuery;
+    req.url = req.url.replace('/server.js', '') || '/';
   }
-  next();
-});
-
-// Handle /server.js directly if requested
-app.all('/server.js', (req, res, next) => {
-  req.url = '/';
   next();
 });
 
@@ -59,7 +52,7 @@ app.get('/time', (req, res) => {
   });
 });
 
-// Route 4: Books routes
+// Route 4: Books routes (Lab 3)
 try {
   const lab03App = require('../lab-03/server.js');
   app.use('/books', (req, res, next) => {
