@@ -1,4 +1,5 @@
 // Vercel Serverless Function entry point
-const app = require('../lab-01/server.js');
+// api/index.js
+const app = require('../lab-03/server.js');
 
 module.exports = app;
