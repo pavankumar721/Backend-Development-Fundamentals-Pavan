@@ -21,28 +21,20 @@ app.get('/', (req, res) => {
     student: 'Pavan Kumar Reddy Kuncha',
     endpoints: {
       lab01: {
-        root: '/',
         about: '/about',
         time: '/time'
       },
       lab03: {
         books: '/books',
         booksWithQuery: '/books?search_q=Clean&order_by=price&order=ASC',
-        bookById: '/books/:id'
+        bookById: '/books/1'
       }
     }
   });
 });
 
-// Mount lab03 routes (/books)
-app.use('/books', (req, res, next) => {
-  req.url = '/books' + (req.url === '/' ? '' : req.url);
-  lab03App(req, res, next);
-});
-app.use('/lab-03', lab03App);
-
-// Mount lab01 routes (/about, /time, /lab-01)
-app.use('/lab-01', lab01App);
+// Mount lab03 and lab01 — pass full path through so their routes match correctly
+app.use(lab03App);
 app.use(lab01App);
 
 module.exports = app;
