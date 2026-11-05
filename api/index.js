@@ -4,8 +4,27 @@ const lab03App = require('../lab-03/server.js');
 
 const app = express();
 
-// Body parsing middleware
 app.use(express.json());
+
+// Request logger middleware
+app.use((req, res, next) => {
+  res.on('finish', () => {
+    console.log(`[${new Date().toISOString()}] ${req.method} ${req.originalUrl} - Status: ${res.statusCode}`);
+  });
+  next();
+});
+
+// Middleware to restore actual route when Vercel rewrites to /api/index.js
+app.use((req, res, next) => {
+  const original = req.headers['x-matched-path'] || req.headers['x-now-route-matches'];
+  if (original && !original.startsWith('/api/index.js')) {
+    req.url = original;
+  } else if (req.url.startsWith('/api/index.js')) {
+    const rawQuery = req.url.includes('?') ? req.url.slice(req.url.indexOf('?')) : '';
+    req.url = '/' + rawQuery;
+  }
+  next();
+});
 
 // Root route: API directory & quick links
 app.get('/', (req, res) => {
@@ -27,14 +46,14 @@ app.get('/', (req, res) => {
   });
 });
 
-// Route /books and sub-paths to lab03App (preserve /books path)
+// Mount lab03 routes (/books, /lab-03)
 app.use('/books', (req, res, next) => {
   req.url = '/books' + (req.url === '/' ? '' : req.url);
   lab03App(req, res, next);
 });
 app.use('/lab-03', lab03App);
 
-// Lab 1 routes accessible at root (/about, /time) and prefixed at /lab-01
+// Mount lab01 routes (/about, /time, /lab-01)
 app.use('/lab-01', lab01App);
 app.use(lab01App);
 
