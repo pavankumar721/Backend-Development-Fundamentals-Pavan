@@ -39,6 +39,18 @@ app.get('/time', (req, res) => {
   });
 });
 
+// Forward any /books routes to lab-03 server if hit on this server instance
+try {
+  const lab03App = require('../lab-03/server.js');
+  app.use('/books', (req, res, next) => {
+    req.url = '/books' + (req.url === '/' ? '' : req.url);
+    lab03App(req, res, next);
+  });
+  app.use('/lab-03', lab03App);
+} catch (e) {
+  // Ignore if lab-03 is not present
+}
+
 // Route 4: Catch-all 404 handler for any unknown path
 app.use((req, res) => {
   res.status(404).json({
