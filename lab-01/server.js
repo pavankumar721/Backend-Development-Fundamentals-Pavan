@@ -13,18 +13,21 @@ app.use((req, res, next) => {
   next();
 });
 
-// Middleware to handle Vercel rewrites:
-// If Vercel rewrote the URL to /server.js or /server.js?..., restore original path
+// Middleware to restore actual requested URL when Vercel rewrites to /server.js
 app.use((req, res, next) => {
-  if (req.url.startsWith('/server.js')) {
-    const original = req.headers['x-matched-path'] || req.originalUrl || '/';
-    // If originalUrl was replaced by Vercel with /server.js, check query parameter or strip /server.js
-    if (original.startsWith('/server.js')) {
-      req.url = original.replace('/server.js', '') || '/';
-    } else {
-      req.url = original;
-    }
+  const matched = req.headers['x-matched-path'];
+  if (matched && !matched.startsWith('/server.js')) {
+    req.url = matched;
+  } else if (req.url.startsWith('/server.js')) {
+    const rawQuery = req.url.includes('?') ? req.url.slice(req.url.indexOf('?')) : '';
+    req.url = '/' + rawQuery;
   }
+  next();
+});
+
+// Handle /server.js directly if requested
+app.all('/server.js', (req, res, next) => {
+  req.url = '/';
   next();
 });
 
@@ -56,7 +59,7 @@ app.get('/time', (req, res) => {
   });
 });
 
-// Forward all /books routes to lab-03 server
+// Route 4: Books routes
 try {
   const lab03App = require('../lab-03/server.js');
   app.use('/books', (req, res, next) => {
@@ -68,7 +71,7 @@ try {
   console.error('Failed to mount lab-03 routes:', e);
 }
 
-// Route 4: Catch-all 404 handler for any unknown path
+// Catch-all 404 handler for any unknown path
 app.use((req, res) => {
   res.status(404).json({
     error: 'Not Found',
