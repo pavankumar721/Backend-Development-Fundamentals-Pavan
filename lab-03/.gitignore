@@ -1,0 +1,9 @@
+node_modules/
+.env
+*.sqlite
+*.db
+
+# Extracted/temp docx folders (local only)
+docx_extracted/
+temp_docx/
+*.docx

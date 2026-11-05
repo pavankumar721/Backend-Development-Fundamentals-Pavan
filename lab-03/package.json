@@ -1,0 +1,27 @@
+{
+  "name": "lab-03",
+  "version": "1.0.0",
+  "description": "Lab 3: REST API with query parameters, validation and debugging – Backend Development Fundamentals",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "start:http": "node http-server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "backend",
+    "rest-api",
+    "lab-03"
+  ],
+  "author": "Pavan Kumar Reddy Kuncha",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pavankumar721/Backend-Development-Fundamentals-Pavan.git"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
