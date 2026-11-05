@@ -13,24 +13,6 @@ app.use((req, res, next) => {
   next();
 });
 
-// Middleware to restore actual requested URL when Vercel rewrites to /api or /api/index.js or /server.js
-app.use((req, res, next) => {
-  const matched = req.headers['x-matched-path'];
-  if (matched && !matched.startsWith('/api') && !matched.startsWith('/server.js')) {
-    req.url = matched;
-  } else if (req.url === '/api' || req.url === '/api/' || req.url === '/server.js') {
-    // If Vercel rewrote request to /api without trailing path, check originalUrl
-    if (req.originalUrl && req.originalUrl !== '/api' && req.originalUrl !== '/server.js') {
-      req.url = req.originalUrl;
-    }
-  } else if (req.url.startsWith('/api/')) {
-    req.url = req.url.replace('/api', '') || '/';
-  } else if (req.url.startsWith('/server.js')) {
-    req.url = req.url.replace('/server.js', '') || '/';
-  }
-  next();
-});
-
 // Route 1: GET / (Welcome text)
 app.get('/', (req, res) => {
   res.status(200).send('Welcome to the Express Server - Backend Development Fundamentals!');
@@ -59,31 +41,17 @@ app.get('/time', (req, res) => {
   });
 });
 
-// Route 4: Books routes (Lab 3)
-try {
-  const lab03App = require('../lab-03/server.js');
-  app.use('/books', (req, res, next) => {
-    req.url = '/books' + (req.url === '/' ? '' : req.url);
-    lab03App(req, res, next);
-  });
-  app.use('/lab-03', lab03App);
-} catch (e) {
-  console.error('Failed to mount lab-03 routes:', e);
-}
-
 // Catch-all 404 handler for any unknown path
 app.use((req, res) => {
   res.status(404).json({
     error: 'Not Found',
     message: `Cannot ${req.method} ${req.originalUrl}. Route not found.`,
-    headers: req.headers,
-    url: req.url,
     statusCode: 404
   });
 });
 
-// Start Express server if run directly (local / Render / Railway)
-if (require.main === module && !process.env.VERCEL) {
+// Start Express server if run directly (local dev)
+if (require.main === module) {
   app.listen(PORT, () => {
     console.log(`Express server running on http://localhost:${PORT}`);
   });

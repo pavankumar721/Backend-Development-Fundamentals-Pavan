@@ -14,18 +14,6 @@ app.use((req, res, next) => {
   next();
 });
 
-// Middleware to restore actual route when Vercel rewrites to /api/index.js
-app.use((req, res, next) => {
-  const original = req.headers['x-matched-path'] || req.headers['x-now-route-matches'];
-  if (original && !original.startsWith('/api/index.js')) {
-    req.url = original;
-  } else if (req.url.startsWith('/api/index.js')) {
-    const rawQuery = req.url.includes('?') ? req.url.slice(req.url.indexOf('?')) : '';
-    req.url = '/' + rawQuery;
-  }
-  next();
-});
-
 // Root route: API directory & quick links
 app.get('/', (req, res) => {
   res.status(200).json({
@@ -33,7 +21,7 @@ app.get('/', (req, res) => {
     student: 'Pavan Kumar Reddy Kuncha',
     endpoints: {
       lab01: {
-        root: '/lab-01',
+        root: '/',
         about: '/about',
         time: '/time'
       },
@@ -46,7 +34,7 @@ app.get('/', (req, res) => {
   });
 });
 
-// Mount lab03 routes (/books, /lab-03)
+// Mount lab03 routes (/books)
 app.use('/books', (req, res, next) => {
   req.url = '/books' + (req.url === '/' ? '' : req.url);
   lab03App(req, res, next);
